@@ -1,103 +1,166 @@
-import Image from "next/image";
+import IfcViewer from "@/components/IfcViewer";
+import { achievements, profile, projects, skills } from "@/data/profile";
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <main className="sheet">
+      {/* ── Title block / hero ── */}
+      <header className="hero">
+        <div className="hero-left">
+          <div className="eyebrow">DWG-01 · General arrangement</div>
+          <h1>
+            {profile.name}
+            <span className="dim-line" aria-hidden>
+              <i />
+              <b>2+ yrs</b>
+              <i />
+            </span>
+          </h1>
+          <p className="role">
+            {profile.title} <span className="muted">— building systems that carry real load.</span>
+          </p>
+          <p className="summary">{profile.summary}</p>
+          <div className="cta">
+            <a className="btn btn-primary" href={profile.cv} download>
+              ↓ Download CV
+            </a>
+            <a className="btn" href={`mailto:${profile.email}`}>
+              ✉ {profile.email}
+            </a>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+
+        <table className="title-block">
+          <tbody>
+            <tr>
+              <th>Project</th>
+              <td colSpan={3}>{profile.name}</td>
+            </tr>
+            <tr>
+              <th>Discipline</th>
+              <td colSpan={3}>Backend · Fullstack · System design</td>
+            </tr>
+            <tr>
+              <th>Location</th>
+              <td>{profile.location}</td>
+              <th>Rev</th>
+              <td>2026.11</td>
+            </tr>
+            <tr>
+              <th>Scale</th>
+              <td>1 : 1,000,000 elements</td>
+              <th>Sheet</th>
+              <td>01 / 04</td>
+            </tr>
+            <tr>
+              <th>Status</th>
+              <td colSpan={3}>
+                <span className="status-dot" /> Open to opportunities
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </header>
+
+      <section className="stats">
+        {profile.stats.map((s) => (
+          <div key={s.label} className="stat">
+            <span className="stat-value">{s.value}</span>
+            <span className="stat-label">{s.label}</span>
+          </div>
+        ))}
+      </section>
+
+      {/* ── Projects as a building ── */}
+      <section className="section" id="projects">
+        <div className="section-head">
+          <span className="section-code">DWG-02</span>
+          <h2>Projects, storey by storey</h2>
+          <p className="muted">
+            Every system I&apos;ve shipped is one floor of this model. Rotate it, pick a floor, read its properties.
+          </p>
+        </div>
+        <IfcViewer />
+      </section>
+
+      {/* ── Skills as Bill of Quantities ── */}
+      <section className="section" id="skills">
+        <div className="section-head">
+          <span className="section-code">DWG-03</span>
+          <h2>Bill of materials</h2>
+          <p className="muted">Quantity takeoff of what I build with.</p>
+        </div>
+        <table className="boq">
+          <thead>
+            <tr>
+              <th>Code</th>
+              <th>Category</th>
+              <th>Materials</th>
+              <th className="r">Qty</th>
+            </tr>
+          </thead>
+          <tbody>
+            {skills.map((s) => (
+              <tr key={s.code}>
+                <td className="mono">{s.code}</td>
+                <td>{s.category}</td>
+                <td>
+                  <div className="chips">
+                    {s.items.map((i) => (
+                      <span key={i} className="chip">
+                        {i}
+                      </span>
+                    ))}
+                  </div>
+                </td>
+                <td className="r mono">{s.items.length.toString().padStart(2, "0")}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </section>
+
+      {/* ── Achievements as approval stamps ── */}
+      <section className="section" id="approvals">
+        <div className="section-head">
+          <span className="section-code">DWG-04</span>
+          <h2>Inspected &amp; approved</h2>
+          <p className="muted">Sign-offs collected along the way.</p>
+        </div>
+        <div className="stamps">
+          {achievements.map((a, i) => (
+            <div key={a.title} className="stamp-card">
+              <span className="stamp" style={{ rotate: `${(i % 2 ? 1 : -1) * (4 + i)}deg` }}>
+                {a.stamp}
+              </span>
+              <div className="stamp-title">{a.title}</div>
+              <div className="muted small">{a.detail}</div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <footer className="footer">
+        <div>
+          <div className="eyebrow">End of drawing set · {projects.length} storeys · 0 open issues</div>
+          <h2>Let&apos;s build something that holds up.</h2>
+        </div>
+        <div className="cta">
+          <a className="btn btn-primary" href={`mailto:${profile.email}`}>
+            ✉ Get in touch
+          </a>
+          {profile.github && (
+            <a className="btn" href={profile.github} target="_blank" rel="noreferrer">
+              GitHub
+            </a>
+          )}
+          {profile.linkedin && (
+            <a className="btn" href={profile.linkedin} target="_blank" rel="noreferrer">
+              LinkedIn
+            </a>
+          )}
+        </div>
       </footer>
-    </div>
+    </main>
   );
 }
