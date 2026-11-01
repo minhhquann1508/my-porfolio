@@ -1,8 +1,8 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import { useState } from "react";
 import { projects } from "@/data/profile";
+import { useSelection } from "./Selection";
 
 const BuildingScene = dynamic(() => import("./BuildingScene"), {
   ssr: false,
@@ -10,8 +10,7 @@ const BuildingScene = dynamic(() => import("./BuildingScene"), {
 });
 
 export default function IfcViewer() {
-  const [selected, setSelected] = useState(0);
-  const [hovered, setHovered] = useState<number | null>(null);
+  const { selected, hovered, setSelected, setHovered } = useSelection();
   const p = projects[selected];
 
   return (

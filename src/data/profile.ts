@@ -6,6 +6,9 @@ export type Project = {
   role: string;
   company: string;
   period: string;
+  // YYYY-MM; end omitted = ongoing
+  start: string;
+  end?: string;
   description: string;
   features: string[];
   stack: string[];
@@ -40,6 +43,7 @@ export const projects: Project[] = [
     role: "Fullstack Developer",
     company: "TGL Solutions",
     period: "Dec 2024 — Present",
+    start: "2024-12",
     description:
       "A construction project management platform (similar to Microsoft Project) for managing projects, materials and labor, with approval workflows for project managers.",
     features: [
@@ -59,7 +63,8 @@ export const projects: Project[] = [
     fullName: "Steel Structure Estimation from IFC",
     role: "Backend Developer",
     company: "TGL Solutions",
-    period: "2025 — Present",
+    period: "2025 — Present", // TODO: confirm dates
+    start: "2025-06",
     description:
       "A quotation system for steel structure projects that performs quantity takeoff directly from 3D IFC models and generates cost quotations.",
     features: [
@@ -78,7 +83,8 @@ export const projects: Project[] = [
     fullName: "Work Management Module",
     role: "Backend Developer",
     company: "TGL Solutions",
-    period: "2025 — Present",
+    period: "2025 — Present", // TODO: confirm dates
+    start: "2025-03",
     description:
       "A multi-tenant work management module shared across multiple products (including PMS), built for large-scale projects with 10,000+ tasks each.",
     features: [
@@ -98,7 +104,9 @@ export const projects: Project[] = [
     fullName: "Integrated Enterprise Suite",
     role: "Fullstack Developer",
     company: "TGL Solutions",
-    period: "Dec 2024 — Present",
+    period: "Dec 2024 — Present", // TODO: confirm dates
+    start: "2024-12",
+    end: "2025-08",
     description:
       "An integrated enterprise suite (CRM, SFA, EMS, LMS, IMS), refactored and modernized from a legacy system.",
     features: [
@@ -117,6 +125,7 @@ export const projects: Project[] = [
     role: "Fullstack Developer & Mentor",
     company: "My Vo Technology and Media",
     period: "Oct 2024 — Present",
+    start: "2024-10",
     description:
       "An online learning platform where instructors upload and manage lectures and students watch lessons — built and operated end-to-end, plus mentoring students in web development.",
     features: [
@@ -151,3 +160,17 @@ export const achievements = [
   { stamp: "TOP 100", title: "Spring 2024 Semester", detail: "Top 100 students" },
   { stamp: "DISTINCTION", title: "Cybersoft Academy", detail: "Graduated with distinction · Jan 2025" },
 ];
+
+export const timeline = {
+  from: "2024-09",
+  to: "2026-12",
+  today: "2026-11",
+  companies: [
+    { name: "TGL Solutions", start: "2024-12" },
+    { name: "My Vo Technology and Media", start: "2024-10" },
+  ],
+  milestones: [
+    { date: "2025-01", label: "Cybersoft · Distinction" },
+    { date: "2026-09", label: "TGL Spot Award Q3" },
+  ],
+};
