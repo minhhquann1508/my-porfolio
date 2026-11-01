@@ -99,13 +99,18 @@ body {
   }
 }
 
+.hero-left {
+  container-type: inline-size;
+}
 .hero h1 {
-  font-size: clamp(2.4rem, 6vw, 4.6rem);
-  line-height: 1;
+  /* scale with the column so the full name always stays on one line */
+  font-size: clamp(1.8rem, 11cqi, 4.6rem);
+  line-height: 1.1;
   font-weight: 600;
   letter-spacing: -0.03em;
   margin: 16px 0 12px;
   display: inline-block;
+  white-space: nowrap;
 }
 
 /* dimension line under the name */
