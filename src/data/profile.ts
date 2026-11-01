@@ -152,8 +152,18 @@ export const skills = [
   { code: "X-01", category: "AI-Assisted Dev", items: ["Claude Code", "OpenAI Codex"] },
 ];
 
+export const featuredAward = {
+  stamp: "AWARD",
+  title: "TGL Spot Award",
+  period: "Q3 / 2026",
+  issuer: "TGL Solutions",
+  description:
+    "Recognized as the top-performing employee of the quarter — awarded in recognition and appreciation of my performance during Q3 2026.",
+  photo: "/spot-award.jpg",
+  caption: "Receiving the certificate at TGL Solutions",
+};
+
 export const achievements = [
-  { stamp: "AWARD", title: "TGL Spot Award", detail: "Top-performing employee · Q3/2026" },
   { stamp: "GPA 3.7", title: "Software Engineering", detail: "FPT College · 3.7 / 4.0" },
   { stamp: "TOP 20", title: "FE Hackathon 2024", detail: "Top 20 teams" },
   { stamp: "TOP 100", title: "Spring 2024 Semester", detail: "Top 100 students" },

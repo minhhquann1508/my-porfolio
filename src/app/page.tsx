@@ -1,4 +1,5 @@
 import AboutSection from "@/components/AboutSection";
+import FeaturedAward from "@/components/FeaturedAward";
 import GanttSchedule from "@/components/GanttSchedule";
 import HeroModel from "@/components/HeroModel";
 import IfcViewer from "@/components/IfcViewer";
@@ -147,6 +148,7 @@ export default function Home() {
             <h2>Inspected &amp; approved</h2>
             <p className="muted">Sign-offs collected along the way.</p>
           </div>
+          <FeaturedAward />
           <div className="stamps">
             {achievements.map((a, i) => (
               <div key={a.title} className="stamp-card">
