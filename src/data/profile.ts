@@ -173,3 +173,56 @@ export const timeline = {
     { date: "2026-09", label: "TGL Spot Award Q3" },
   ],
 };
+
+export const about = {
+  photo: "/profile.jpg",
+  greeting: "Hi, I'm Quân.",
+  paragraphs: [
+    "I'm a software engineer from Ho Chi Minh City who likes problems with real weight behind them.",
+    "Most of my work lives where software meets construction: reading 3D IFC models with a million elements, turning them into steel quotations, scheduling projects with 10,000+ tasks, and teaching Gemini to estimate better with every project it sees.",
+    "I care about the parts nobody demos — clean boundaries, queues that don't drop messages, CI that blocks a bad merge — because that's what keeps a system standing after launch. Outside the day job I mentor students starting out in web development, which keeps me honest about explaining the why, not just the how.",
+  ],
+  facts: [
+    { k: "Based in", v: "Ho Chi Minh City, Vietnam" },
+    { k: "Currently", v: "Fullstack / Backend @ TGL Solutions" },
+    { k: "Also", v: "Fullstack Dev & Mentor @ My Vo" },
+    { k: "Education", v: "Software Engineering · FPT College · GPA 3.7" },
+    { k: "Pair-programs with", v: "Claude Code, OpenAI Codex" },
+  ],
+};
+
+// Soft skills, framed as structural properties — each backed by evidence from real work
+export const personalSkills = [
+  {
+    code: "P-01",
+    property: "Load-bearing",
+    title: "End-to-end ownership",
+    description:
+      "I take a feature from schema to production — database design, backend architecture, CI/CD, security and day-two operations — and stay accountable after it ships.",
+    proof: "Built and operated the LMS end-to-end; secured NewCAD with WAF + OPNsense.",
+  },
+  {
+    code: "P-02",
+    property: "Knowledge transfer",
+    title: "Mentoring & sharing",
+    description:
+      "I mentor students in web development: reviewing their code, explaining trade-offs, and helping them build habits that scale beyond the first project.",
+    proof: "Mentor at My Vo Technology and Media since Oct 2024.",
+  },
+  {
+    code: "P-03",
+    property: "Tolerance ±0",
+    title: "Quality & code discipline",
+    description:
+      "Quality shouldn't depend on someone remembering to check. I automate it — static analysis, quality gates and CI that scans every merge request.",
+    proof: "Self-hosted SonarQube + reusable GitLab CI templates across frameworks.",
+  },
+  {
+    code: "P-04",
+    property: "Adaptive",
+    title: "Fast learner, AI-amplified",
+    description:
+      "I switch between PHP, C# and TypeScript across parallel projects, and use AI assistants for generation, refactoring, review, tests and docs — to move faster without cutting corners.",
+    proof: "GPA 3.7 · Top 20 FE Hackathon 2024 · TGL Spot Award Q3/2026.",
+  },
+];

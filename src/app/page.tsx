@@ -1,3 +1,4 @@
+import AboutSection from "@/components/AboutSection";
 import GanttSchedule from "@/components/GanttSchedule";
 import HeroModel from "@/components/HeroModel";
 import IfcViewer from "@/components/IfcViewer";
@@ -72,10 +73,12 @@ export default function Home() {
           ))}
         </section>
 
-        {/* ── Projects as a building ── */}
+        <AboutSection />
+
+      {/* ── Projects as a building ── */}
         <section className="section" id="projects">
           <div className="section-head">
-            <span className="section-code">DWG-02</span>
+            <span className="section-code">DWG-03</span>
             <h2>Projects, storey by storey</h2>
             <p className="muted">
               Every system I&apos;ve shipped is one floor of this model. Rotate
@@ -88,7 +91,7 @@ export default function Home() {
         {/* ── Experience as a construction schedule ── */}
         <section className="section" id="schedule">
           <div className="section-head">
-            <span className="section-code">DWG-03</span>
+            <span className="section-code">DWG-04</span>
             <h2>Construction schedule</h2>
             <p className="muted">
               Two companies, five systems, running in parallel. Click a bar to
@@ -101,7 +104,7 @@ export default function Home() {
         {/* ── Skills as Bill of Quantities ── */}
         <section className="section" id="skills">
           <div className="section-head">
-            <span className="section-code">DWG-04</span>
+            <span className="section-code">DWG-05</span>
             <h2>Bill of materials</h2>
             <p className="muted">Quantity takeoff of what I build with.</p>
           </div>
@@ -140,7 +143,7 @@ export default function Home() {
         {/* ── Achievements as approval stamps ── */}
         <section className="section" id="approvals">
           <div className="section-head">
-            <span className="section-code">DWG-05</span>
+            <span className="section-code">DWG-06</span>
             <h2>Inspected &amp; approved</h2>
             <p className="muted">Sign-offs collected along the way.</p>
           </div>
