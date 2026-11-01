@@ -12,16 +12,14 @@ export default function AboutSection() {
 
       <div className="about">
         <figure className="portrait">
-          <div className="portrait-frame" tabIndex={0}>
-            <Image src={about.photo} alt={profile.name} fill sizes="(max-width: 960px) 100vw, 380px" priority />
+          <div className="portrait-frame">
+            <div className="portrait-photo">
+              <Image src={about.photo} alt={profile.name} fill sizes="(max-width: 960px) 100vw, 380px" quality={90} priority />
+            </div>
             <span className="cross tl" />
             <span className="cross tr" />
             <span className="cross bl" />
             <span className="cross br" />
-            <span className="portrait-hint">
-              <span className="on-hover">hover</span>
-              <span className="on-touch">tap</span> · true colour
-            </span>
           </div>
           <div className="dim-v" aria-hidden>
             <i />

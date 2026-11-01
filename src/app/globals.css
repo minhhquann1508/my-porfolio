@@ -835,57 +835,19 @@ body {
   position: relative;
   aspect-ratio: 4 / 5;
   border: 1px solid var(--line-strong);
-  background: #1b5ca8;
-  overflow: visible;
 }
-.portrait-frame img {
-  object-fit: cover;
-  /* blueprint tint: greyscale photo blended onto the blue frame */
-  filter: grayscale(1) contrast(1.15) brightness(1.05);
-  mix-blend-mode: luminosity;
-  opacity: 0.9;
-  transition:
-    filter 0.5s,
-    mix-blend-mode 0.5s,
-    opacity 0.5s;
-}
-.portrait-frame::after {
-  content: "";
+/* clips the zoom so the photo never spills past the frame */
+.portrait-photo {
   position: absolute;
   inset: 0;
-  pointer-events: none;
-  background-image:
-    linear-gradient(rgba(214, 234, 255, 0.14) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(214, 234, 255, 0.14) 1px, transparent 1px);
-  background-size: 24px 24px;
-  transition: opacity 0.5s;
+  overflow: hidden;
 }
-.portrait-frame:hover img,
-.portrait-frame:focus img {
-  filter: none;
-  mix-blend-mode: normal;
-  opacity: 1;
+.portrait-photo img {
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
-.portrait-frame:hover::after,
-.portrait-frame:focus::after {
-  opacity: 0;
-}
-.portrait-hint {
-  position: absolute;
-  right: 8px;
-  bottom: 8px;
-  z-index: 2;
-  font-family: var(--font-mono), monospace;
-  font-size: 0.65rem;
-  padding: 2px 6px;
-  color: var(--ink);
-  background: rgba(9, 30, 56, 0.75);
-  border: 1px solid var(--line);
-  transition: opacity 0.3s;
-}
-.portrait-frame:hover .portrait-hint,
-.portrait-frame:focus .portrait-hint {
-  opacity: 0;
+.portrait-frame:hover .portrait-photo img {
+  transform: scale(1.04);
 }
 .cross {
   position: absolute;
@@ -1059,18 +1021,4 @@ body {
   letter-spacing: 0.14em;
   color: var(--ok);
   margin-bottom: 4px;
-}
-.portrait-frame:focus {
-  outline: none;
-}
-.on-touch {
-  display: none;
-}
-@media (hover: none) {
-  .on-hover {
-    display: none;
-  }
-  .on-touch {
-    display: inline;
-  }
 }
