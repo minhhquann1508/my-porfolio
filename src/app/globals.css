@@ -61,9 +61,10 @@ body {
 
 /* ── Sheet frame ── */
 .sheet {
-  max-width: 1240px;
+  width: calc(100% - 48px);
+  max-width: 1440px;
   margin: 24px auto;
-  padding: 48px 48px 0;
+  padding: 48px 32px 0;
   border: 1px solid var(--line-strong);
   outline: 1px solid var(--line);
   outline-offset: 8px;
@@ -71,6 +72,7 @@ body {
 }
 @media (max-width: 720px) {
   .sheet {
+    width: auto;
     margin: 12px;
     padding: 24px 16px 0;
     outline: none;
@@ -155,7 +157,7 @@ body {
   margin: 0 0 16px;
 }
 .summary {
-  max-width: 62ch;
+  max-width: 75ch;
   color: #c4d9f2;
   line-height: 1.65;
 }
@@ -926,7 +928,7 @@ body {
 .about-text p {
   color: #c4d9f2;
   line-height: 1.7;
-  max-width: 62ch;
+  max-width: 75ch;
   margin: 0 0 16px;
 }
 .about-text .about-greeting {
