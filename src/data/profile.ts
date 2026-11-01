@@ -63,8 +63,8 @@ export const projects: Project[] = [
     fullName: "Steel Structure Estimation from IFC",
     role: "Backend Developer",
     company: "TGL Solutions",
-    period: "2025 — Present", // TODO: confirm dates
-    start: "2025-06",
+    period: "Dec 2024 — Present",
+    start: "2024-12",
     description:
       "A quotation system for steel structure projects that performs quantity takeoff directly from 3D IFC models and generates cost quotations.",
     features: [
@@ -83,8 +83,8 @@ export const projects: Project[] = [
     fullName: "Work Management Module",
     role: "Backend Developer",
     company: "TGL Solutions",
-    period: "2025 — Present", // TODO: confirm dates
-    start: "2025-03",
+    period: "Dec 2024 — Present",
+    start: "2024-12",
     description:
       "A multi-tenant work management module shared across multiple products (including PMS), built for large-scale projects with 10,000+ tasks each.",
     features: [
@@ -104,9 +104,8 @@ export const projects: Project[] = [
     fullName: "Integrated Enterprise Suite",
     role: "Fullstack Developer",
     company: "TGL Solutions",
-    period: "Dec 2024 — Present", // TODO: confirm dates
+    period: "Dec 2024 — Present",
     start: "2024-12",
-    end: "2025-08",
     description:
       "An integrated enterprise suite (CRM, SFA, EMS, LMS, IMS), refactored and modernized from a legacy system.",
     features: [
